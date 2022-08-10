@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Minimal Portfolio</title>
+    <link rel="stylesheet" href="{% static 'lib/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'layout/MinimalPortfolio/css/style.min.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <p href="index.html" class="header__logo"><span>B</span><span>white.</span></p>
+            <nav class="header__navigation">
+                <button class="header__menu-btn transition btn">Menu</button>
+                <div class="header__dropdown">
+                    <a href="http://layout.ck1e.ru/MinimalPortfolio/about.html" class="header__link transition btn">About.</a>
+                    <a href="http://layout.ck1e.ru/MinimalPortfolio/contact.html" class="header__link transition btn">Contact.</a>
+                    <a href="http://layout.ck1e.ru/MinimalPortfolio/404.html" class="header__link transition btn">404.</a>
+                </div>
+            </nav>
+        </header>
+        <main class="main">
+            <h1 class="main__title">Soundpro.</h1>
+            <h2 class="main__sub-title horizontal-line">Web page for <span>soundpro</span> team</h2>
+            <div class="detail-project">
+                <button class="detail-project__prev-btn transition btn">PREVIOUS PROJECT</button>
+                <div class="detail-project__preview preview"></div>
+                <button class="detail-project__next-btn transition btn">NEXT PROJECT</button>
+                <div class="detail-project__detail-text detail-text">
+                    <p>Nulla a tellus eu lacus sagittis luctus. Donec
+                    ultricies tempus tellus sed tempor. Etiam tristique ipsum nunc, consequat facilisis orci pharetra
+                    egestas. Nulla ut viverra nunc. Etiam nec libero quam. Suspendisse in sapien ullamcorper est aliquet
+                    tincidunt id vitae ligula.</p>
+                    <details class="detail-text__full">In hac habitasse platea dictumst. Pellentesque sed porttitor eros.
+                        Pellentesque pulvinar felis cursus lorem maximus, at maximus dolor cursus. Nullam ullamcorper
+                        tristique est, at rutrum sem dignissim eu. Ut id nunc eu diam accumsan aliquam non et nunc.
+                        Phasellus et iaculis lorem. Aenean eleifend libero sit amet molestie viverra. In hac habitasse
+                        platea dictumst. Sed euismod erat ac nibh tincidunt, eget dictum dui egestas. Aenean at tristique
+                        nulla. Nullam ante lorem, placerat luctus vulputate eu, convallis vitae leo. Curabitur ut eros
+                        lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                        egestas. Integer laoreet quam id cursus facilisis. In dictum gravida elementum. In hac habitasse
+                        platea dictumst. Nullam sit amet facilisis diam. Curabitur a semper nisi, elementum sodales elit.
+                        Sed accumsan efficitur lacus eget finibus. Vivamus purus augue, iaculis a euismod malesuada,
+                        dignissim eu ligula.
+                        <summary class="load-more transition btn">
+                            <span>load more</span>
+                            <i class="fas fa-long-arrow-alt-down"></i>
+                        </summary>
+                    </details>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright"><span>Web</span> - developer 2020</p>
+            <div class="footer__social">
+                <a href="#" class="footer__link transition btn"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" class="footer__link transition btn"><i class="fab fa-vk"></i></a>
+                <a href="#" class="footer__link transition btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="footer__link transition btn"><i class="fab fa-github"></i></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

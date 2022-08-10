@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="{% static 'portfolio/media/img/favicon.ico' %}">
+
+    <title>{{ title|default:"ck1e" }}</title>
+
+    <!-- Plugin -->
+    <link rel="stylesheet" href="{% static 'portfolio/css/include.css' %}" media="all">
+
+    {% if pagePiling %}
+        <link rel="stylesheet" href="{% static 'lib/css/jquery.pagePiling.min.css' %}" media="all">
+    {% endif %}
+
+    {% if splide %}
+        <link rel="stylesheet" href="{% static 'lib/css/splide.min.css' %}" media="all">
+    {% endif %}
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.min.css' %}" media="all">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'portfolio/css/responsive.min.css' %}" media="all">
+
+    {% if c1 %}
+        <link rel="stylesheet" href="{% static 'lib/css/c1.min.css' %}" media="all">
+    {% endif %}
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1C3FZVT3P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-X1C3FZVT3P');
+    </script>
+</head>
+
+<body class={{ body_class }}>
+    <!-- Loader Screen -->
+    <div id="loader"></div>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GenPass</title>
+    <link rel='stylesheet' href="{% static 'js/GenPass/style.min.css' %}">
+</head>
+<body>
+
+    <div class="tabs">
+        <div class="GenPass" id="tab-1">
+            <div class="GenPass__header">
+                <span class="pass">Default Password Here</span>
+                <button class="copy">Copy</button>
+                <p>Copied!</p>
+            </div>
+            <div class="GenPass__body">
+                <label class="GenPass__form-control">
+                    <span>Password length</span>
+                    <div class="number">
+                        <button type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                        <input class="len" type="number" value="8" min="8" max="30" readonly>
+                        <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                    </div>
+                </label>
+                <label class="GenPass__form-control">
+                    <span>Lowercase Letters</span>
+                    <input id="lower" type="checkbox" checked>
+                    <span data-label-on="On" data-label-off="Off"></span>
+                </label>
+                <label class="GenPass__form-control">
+                    <span>Uppercase Letters</span>
+                    <input id="upper" type="checkbox">
+                    <span data-label-on="On" data-label-off="Off"></span>
+                </label>
+                <label class="GenPass__form-control">
+                    <span>Numbers</span>
+                    <input id="number" type="checkbox">
+                    <span data-label-on="On" data-label-off="Off"></span>
+                </label>
+                <label class="GenPass__form-control">
+                    <span>Symbols</span>
+                    <input id="symbol" type="checkbox">
+                    <span data-label-on="On" data-label-off="Off"></span>
+                </label>
+            </div>
+            <div class="GenPass__footer">
+                <button class="generate">Generate Password</button>
+            </div>
+        </div>
+        <div class="GenPass" id="tab-2">
+            <div class="GenPass__header">
+                <span class="pass">Smart Password Here</span>
+                <button class="copy">Copy</button>
+                <p>Copied!</p>
+            </div>
+            <div class="GenPass__body">
+                <label class="GenPass__form-control">
+                    <span>Password length</span>
+                    <div class="number">
+                        <button type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                        <input class="len" type="number" value="8" min="8" max="12" readonly>
+                        <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                    </div>
+                </label>
+            </div>
+            <div class="GenPass__footer">
+                <button class="generate">Generate Password</button>
+            </div>
+        </div>
+
+        <div class="tabs__links">
+            <a href="#tab-1">Default</a>
+            <a href="#tab-2">Smart</a>
+        </div>
+    </div>
+
+<script type="text/javascript" src="{% static 'js/GenPass/script.min.js' %}"></script>
+</body>
+</html>

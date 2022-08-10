@@ -1,0 +1,132 @@
+{% include "portfolio/include/head.html" with title="ck1e | Portfolio" c1=True pagePiling=True body_class="work" %}
+{% include "portfolio/include/header.html" %}
+
+<main>
+
+    {% if case_list %}
+        <!-- Side Navbar -->
+        <nav class="work-nav">
+            <div class="table">
+                <div class="valign">
+                    {% for case in case_list %}
+                        <a class="item-menu{% if forloop.first %} active{% endif %}" data-menuanchor="{{ case.name|cut:' ' }}" href="#{{ case.name|cut:' ' }}">
+                            <span class="text">{{ case.name }}</span>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </nav>
+    {% endif %}
+
+    {% if case_list %}
+        <!-- Work List -->
+        <article class="pagepiling">
+            {% for case in case_list %}
+                <section class="section">
+                    <div class="layer">
+                        {% if case.img_bg %}
+                            <div class="prx bg-work"  id="--{{ forloop.counter }}" style="background-image: url('{{ case.img_bg.url }}');">
+                                {% if case.img_obj %}
+                                    <div class="img-obj" data-depth="0.20" style="background-image: url('{{ case.img_obj.url }}');"></div>
+                                {% endif %}
+                            </div>
+                        {% else  %}
+                            <div class="prx bg-work bg-gradient"  id="--{{ forloop.counter }}">
+                                {% if case.img_obj %}
+                                    <div class="img-obj" data-depth="0.20" style="background-image: url('{{ case.img_obj.url }}');"></div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="title-work animated fadeInUp delay-0.5s">
+                                    <a href="portfolio/{{ case.name }}">
+                                    <h3 id="zoom-fade" class="w-max">{{ case.name }}</h3>
+                                    {% if case.technology %}
+                                        <p class="sub">{{ case.technology }}</p>
+                                    {% endif %}
+                                    <h4 class="btn-detail w-max">Case detail</h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {% endfor %}
+        </article>
+
+        <!-- Bottom Navigation Mobile-->
+        <a class="bottom-nav-m">Next Case</a>
+    {% endif %}
+
+</main>
+
+{% include "portfolio/include/footer.html" %}
+{% include "portfolio/include/last.html" %}
+{% if case_list %}
+    <script>
+        (function($) {
+            "use strict";
+            // Work pagepolling scroll
+            $('.pagepiling').pagepiling({
+                menu: '.work-nav',
+                direction: 'vertical',
+                verticalCentered: true,
+                sectionsColor: [],
+                anchors: {% for case in case_list %}{% if forloop.first %}[{% endif %} '{{ case.name|cut:' ' }}', {% if forloop.last %}]{% endif %}{% endfor %},
+                scrollingSpeed: 700,
+                easing: 'swing',
+                loopBottom: true,
+                loopTop: false,
+                css3: true,
+                navigation: false,
+                normalScrollElements: null,
+                normalScrollElementTouchThreshold: 5,
+                touchSensitivity: 5,
+                keyboardScrolling: true,
+                sectionSelector: '.section',
+                animateAnchor: false,
+
+                //events
+                onLeave: function(index, nextIndex, direction){
+                    var indexNumber= [1];
+                    for(var i = 0; i < indexNumber.length; i++) {
+                        if(indexNumber){
+                            $('.title-work').removeClass('animated fadeInUp delay-0.5s');
+                        }
+                    }
+                },
+                afterLoad: function(anchorLink, index){
+                    var indexNumber= [1];
+                    for(var i = 0; i < indexNumber.length; i++) {
+                        if(indexNumber){
+                            $('.title-work').addClass('animated fadeInUp delay-0.5s');
+                        }
+                    }
+                },
+                afterRender: function(){
+
+                },
+            });
+
+            // Parallax setup on works
+            var scene = {% for case in case_list %}{% if forloop.first %}[{% endif %} '#--{{ forloop.counter }}', {% if forloop.last %}]{% endif %}{% endfor %};
+            var sceneSelector = document.querySelectorAll(".layer .prx");
+            for(var i = 0; i < scene.length; i++) {
+                scene[i] = new Parallax(sceneSelector[i],{
+                    invertX: !0,
+                    invertY: !0,
+                    frictionX: .1,
+                    frictionY: .05
+                });
+
+            };
+
+            //moblie touch to scroll
+            $('.bottom-nav-m').on('click', function(){
+                $.fn.pagepiling.moveSectionDown();
+            });
+        })(jQuery);
+    </script>
+{% endif %}

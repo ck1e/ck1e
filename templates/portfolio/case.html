@@ -1,0 +1,143 @@
+{% load static %}
+{% include "portfolio/include/head.html" with title="ck1e | "|add:case.name splide=True body_class="work-detail" %}
+
+<main>
+
+	<!-- Button Back -->
+	<a class="btn-back" href="/portfolio">Back to Portfolio</a>
+
+	<!-- Main Background -->
+	{% if case.img_bg_detail %}
+		<div class="main-detail-bg" style="background-image: url('{{ case.img_bg_detail.url }}');">
+	{% else %}
+		<div class="main-detail-bg bg-gradient">
+			<div class="inner-page" id="inner-page"></div>
+	{% endif %}
+			<!-- Mouse Animation -->
+			<a href="#">
+				<div id="mouse-scroll">
+					<div class="mouse">
+						<div class="mouse-in"></div>
+					</div>
+					<div>
+						<span class="down-arrow-1"></span>
+						<span class="down-arrow-2"></span>
+						<span class="down-arrow-3"></span>
+					</div>
+				</div>
+			</a>
+		</div>
+
+
+	{% if work_list %}
+		<!-- Title -->
+		<div class="table">
+			<div class="valign">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="title-work-detail">
+								<h2>{{ case.name }}</h2>
+								{% if case.technology %}
+									<p class="project">{{ case.technology }}</p>
+								{% endif %}
+								{% if case.text %}
+									<div class="dash"></div>
+									<p>{{ case.text }}</p>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Content -->
+		<div class="bg-main mt-full">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 offset-md-2 text-center">
+						<article class="web-detail">
+							<!-- Work List -->
+							{% for work in work_list %}
+								<section>
+									<h3>{{ work.name }}</h3>
+
+									{% if work.text %}
+										<p class="m-each" data-aos-once="true" data-aos="fade-up">{{ work.text }}</p>
+									{% endif %}
+
+									{% load index %}
+									{% if work_img_list|index:forloop.counter0 %}
+										<div id="image-slider--{{ forloop.counter0 }}" class="splide">
+											<div class="splide__track">
+												<ul class="splide__list">
+													{% if work.img %}
+														<li class="splide__slide">
+															<img class="img-fluid" src="{{ work.img.url }}" alt="{{ work.name }} image">
+														</li>
+													{% endif %}
+													{% for work_img in work_img_list|index:forloop.counter0 %}
+														<li class="splide__slide" >
+															<img class="img-fluid" src="{{ work_img.img.url }}" alt="Additional--{{ forloop.counter0 }} {{ work.name }} image">
+														</li>
+													{% endfor %}
+												</ul>
+											</div>
+										</div>
+									{% elif work.img %}
+										<div data-aos-once="true" data-aos="fade-up">
+											<img class="img-fluid" src="{{ work.img.url }}" alt="{{ work.name }} image">
+										</div>
+									{% endif %}
+
+									<div class="m-each" data-aos-once="true" data-aos="fade-up">
+										<a href='{% if work.link %}{{ work.link }}{% else %}http://{{ case.name|lower|cut:" " }}.{{ request.META.HTTP_HOST }}/{{ work.name|cut:" " }}{% endif %}' class="btn-link" target="_blank">View {{ case.name }}</a>
+									</div>
+								</section>
+							{% endfor %}
+						</article>
+
+						{% if next_case or previous_case %}
+							<!-- Navigation Bottom -->
+							<ul class="prev-nex-btn">
+								{% if next_case %}
+									<li><a  href="{{ next_case }}">Next Case</a></li>
+								{% endif %}
+								{% if previous_case %}
+									<li><a  href="{{ previous_case }}">Previous Case</a></li>
+								{% endif %}
+							</ul>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+
+</main>
+
+{% if case.img_bg_detail %}
+	{% include "portfolio/include/last.html" with splide=True %}
+{% else %}
+	{% include "portfolio/include/last.html" with splide=True particles=True %}
+{% endif %}
+
+{% for work in work_list %}
+	{% if work_img_list|index:forloop.counter0 %}
+		<script>
+
+			new Splide( '#image-slider--{{ forloop.counter0 }}', {
+				type   : 'fade',
+				speed: 700,
+				perPage: 1,
+				rewind: true,
+				arrows: false,
+				pagination: false,
+				autoplay: true,
+				interval: 3000
+			} ).mount();
+
+		</script>
+	{% endif %}
+{% endfor %}

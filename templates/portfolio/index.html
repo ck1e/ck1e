@@ -1,0 +1,40 @@
+{% include "portfolio/include/head.html" with body_class="home" %}
+{% include "portfolio/include/header.html" %}
+
+<main class="home-container">
+
+    <!-- Left Toggle Link -->
+    <div class="left-anim"></div>
+    <a href="about" class="nav-lr nav-left text-uppercase">
+        <span>About us</span>
+    </a>
+
+    <!-- Right Toggle Link -->
+    <div class="right-anim"></div>
+    <a href="portfolio" class="nav-lr nav-right text-uppercase">
+        <span>Portfolio</span>
+    </a>
+
+    <!-- Background -->
+    <div class="outer-page">
+        <div class="inner-page" id="inner-page">
+            <div class="decor"></div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <div class="title animated fadeInUp text-uppercase">
+        <h3>We are</h3>
+    </div>
+
+    <!-- Typed Text Animation -->
+    <div class="table">
+        <div class="valign">
+            <h1><span class="spin animated fadeInUp delay-2s"></span></h1>
+        </div>
+    </div>
+
+</main>
+
+{% include "portfolio/include/footer.html" %}
+{% include "portfolio/include/last.html" with particles=True %}

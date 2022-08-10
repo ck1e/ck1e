@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FurnitureShop</title>
+    <link rel="stylesheet" href="{% static 'lib/css/splide.min.css' %}">
+    <link rel="stylesheet" href="{% static 'lib/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'layout/FurnitureShop/css/style.min.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header container">
+            <a class="logo container__col-auto" href="#"><span>Funiro.</span></a>
+            <nav class="nav container__col-auto">
+                <div class="nav__dropdown">
+                    <div><a href="#" class="link">Products</a> <i class="fas fa-chevron-down"></i></div>
+                    <div>
+                        <a href="#" class="nav__dropdown--link">Inspirations</a>
+                        <a href="#" class="nav__dropdown--link">Inspirations</a>
+                        <a href="#" class="nav__dropdown--link">Inspirations</a>
+                    </div>
+                </div>
+                <div class="nav__dropdown">
+                    <div><a href="#" class="link">Rooms</a> <i class="fas fa-chevron-down"></i></div>
+                    <div>
+                        <a href="#" class="nav__dropdown--link">Inspirations</a>
+                        <a href="#" class="nav__dropdown--link">Inspirations</a>
+                        <a href="#" class="nav__dropdown--link">Inspirations</a>
+                    </div>
+                </div>
+                <a href="#" class="nav__link link">Inspirations</a>
+            </nav>
+            <form class="header__form form container__col-auto" action="#">
+                <button><i class="fas fa-search"></i></button>
+                <input class="form__input" type="text" placeholder="Search for minimalist chair">
+            </form>
+            <div class="icons container__col-auto">
+                <button class="icons__icon"><i class="far fa-heart"></i></button>
+                <button class="icons__icon"><i class="fas fa-shopping-cart"></i></button>
+                <button class="icons__icon icons__user"></button>
+            </div>
+        </header>
+        <main class="main">
+            <div class="main__slider">
+                <div class="container">
+                    <section class="info">
+                        <h1>High-Quality<br>Furniture Just<br>For You</h1>
+                        <p>Our furniture is made from selected and best quality materials that are suitable for your dream
+                            home</p>
+                        <button>Shop Now</button>
+                    </section>
+                </div>
+                <div class="main__slider-splide splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <section class="product splide__slide" style="background-image: url({% static 'layout/FurnitureShop/media/img/s1.jpg)' %};">
+                                <div class="product__info">
+                                    <div>
+                                        <h5>Bohauss</h5>
+                                        <p>Luxury big sofa 2-seat</p>
+                                        <div class="product__price"><span>Rp 17.000.000</span></div>
+                                    </div>
+                                    <button><i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </section>
+                            <section class="product splide__slide" style="background-image: url({% static 'layout/FurnitureShop/media/img/s2.jpg)' %};">
+                                <div class="product__info">
+                                    <div>
+                                        <h5>Bohauss</h5>
+                                        <p>Luxury big sofa 2-seat</p>
+                                        <div class="product__price"><span>Rp 17.000.000</span> <span>Rp 17.000.000</span>
+                                        </div>
+                                    </div>
+                                    <button><i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </section>
+                            <section class="product splide__slide" style="background-image: url({% static 'layout/FurnitureShop/media/img/s3.jpg)' %};">
+                                <div class="product__info">
+                                    <div>
+                                        <h5>Bohauss</h5>
+                                        <p>Luxury big sofa 2-seat</p>
+                                        <div class="product__price"><span>Rp 17.000.000</span></div>
+                                    </div>
+                                    <button><i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main__advantages container">
+                <div class="advantage">
+                    <img src="{% static 'layout/FurnitureShop/media/img/a1.svg' %}" alt="a1">
+                    <div class="advantage__info">
+                        <span>High Quality</span>
+                        <p>crafted from top materials</p>
+                    </div>
+                </div>
+                <div class="advantage">
+                    <img src="{% static 'layout/FurnitureShop/media/img/a2.svg' %}" alt="a2">
+                    <div class="advantage__info">
+                        <span>Warrany Protection</span>
+                        <p>Over 2 years</p>
+                    </div>
+                </div>
+                <div class="advantage">
+                    <img src="{% static 'layout/FurnitureShop/media/img/a3.svg' %}" alt="a3">
+                    <div class="advantage__info">
+                        <span>Free Shipping</span>
+                        <p>Order over 150 $</p>
+                    </div>
+                </div>
+                <div class="advantage">
+                    <img src="{% static 'layout/FurnitureShop/media/img/a4.svg' %}" alt="a4">
+                    <div class="advantage__info">
+                        <span>24 / 7 Support</span>
+                        <p>Dedicated support</p>
+                    </div>
+                </div>
+            </div>
+            <article class="main__products container">
+                <h2>Our Products</h2>
+                <section class="product">
+                    <img src="{% static 'layout/FurnitureShop/media/img/p1.jpg' %}" alt="p1">
+                    <div class="product__info">
+                        <h5>Syltherine</h5>
+                        <p>Stylish cafe chair</p>
+                        <div class="product__price"><span>Rp 2.500.000</span> <span>Rp 3.500.000</span></div>
+                    </div>
+                    <div class="product__hover">
+                        <button class="--reverse">Add to cart</button>
+                        <div>
+                            <button class="--icon"><i class="fas fa-share-alt"></i> <span>Share</span></button>
+                            <button class="--icon"><i class="far fa-heart"></i> <span>Like</span></button>
+                        </div>
+                    </div>
+                    <div class="product__label product__label--new"><span>New</span></div>
+                    <div class="product__label product__label--discount product__label--two"><span>-30%</span></div>
+                </section>
+                <section class="product">
+                    <img src="{% static 'layout/FurnitureShop/media/img/p2.jpg' %}" alt="p2">
+                    <div class="product__info">
+                        <h5>Leviosa</h5>
+                        <p>Stylish cafe chair</p>
+                        <div class="product__price"><span>Rp 2.500.000</span></div>
+                    </div>
+                    <div class="product__hover">
+                        <button class="--reverse">Add to cart</button>
+                        <div>
+                            <button class="--icon"><i class="fas fa-share-alt"></i> <span>Share</span></button>
+                            <button class="--icon"><i class="far fa-heart"></i> <span>Like</span></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="product">
+                    <img src="{% static 'layout/FurnitureShop/media/img/p3.jpg' %}" alt="p3">
+                    <div class="product__info">
+                        <h5>Lolito</h5>
+                        <p>Luxury big sofa</p>
+                        <div class="product__price"><span>Rp 7.000.000</span> <span>Rp 14.000.000</span></div>
+                    </div>
+                    <div class="product__hover">
+                        <button class="--reverse">Add to cart</button>
+                        <div>
+                            <button class="--icon"><i class="fas fa-share-alt"></i> <span>Share</span></button>
+                            <button class="--icon"><i class="far fa-heart"></i> <span>Like</span></button>
+                        </div>
+                    </div>
+                    <div class="product__label product__label--discount"><span>-50%</span></div>
+                </section>
+                <section class="product">
+                    <img src="{% static 'layout/FurnitureShop/media/img/p4.jpg' %}" alt="p4">
+                    <div class="product__info">
+                        <h5>Respira</h5>
+                        <p>Minimalist fan</p>
+                        <div class="product__price"><span>Rp 500.000</span></div>
+                    </div>
+                    <div class="product__hover">
+                        <button class="--reverse">Add to cart</button>
+                        <div>
+                            <button class="--icon"><i class="fas fa-share-alt"></i> <span>Share</span></button>
+                            <button class="--icon"><i class="far fa-heart"></i> <span>Like</span></button>
+                        </div>
+                    </div>
+                    <div class="product__label product__label--new"><span>New</span></div>
+                </section>
+                <section class="product">
+                    <img src="{% static 'layout/FurnitureShop/media/img/p5.jpg' %}" alt="p5">
+                    <div class="product__info">
+                        <h5>Grifo</h5>
+                        <p>Night lamp</p>
+                        <div class="product__price"><span>Rp 1.500.000</span></div>
+                    </div>
+                    <div class="product__hover">
+                        <button class="--reverse">Add to cart</button>
+                        <div>
+                            <button class="--icon"><i class="fas fa-share-alt"></i> <span>Share</span></button>
+                            <button class="--icon"><i class="far fa-heart"></i> <span>Like</span></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="product">
+                    <img src="{% static 'layout/FurnitureShop/media/img/p6.jpg' %}" alt="p6">
+                    <div class="product__info">
+                        <h5>Muggo</h5>
+                        <p>Small mug</p>
+                        <div class="product__price"><span>Rp 150.000</span></div>
+                    </div>
+                    <div class="product__hover">
+                        <button class="--reverse">Add to cart</button>
+                        <div>
+                            <button class="--icon"><i class="fas fa-share-alt"></i> <span>Share</span></button>
+                            <button class="--icon"><i class="far fa-heart"></i> <span>Like</span></button>
+                        </div>
+                    </div>
+                    <div class="product__label product__label--new"><span>New</span></div>
+                </section>
+                <section class="product">
+                    <img src="{% static 'layout/FurnitureShop/media/img/p7.jpg' %}" alt="p7">
+                    <div class="product__info">
+                        <h5>Pingky</h5>
+                        <p>Cute bed set</p>
+                        <div class="product__price"><span>Rp 7.000.000</span> <span>Rp 14.000.000</span></div>
+                    </div>
+                    <div class="product__hover">
+                        <button class="--reverse">Add to cart</button>
+                        <div>
+                            <button class="--icon"><i class="fas fa-share-alt"></i> <span>Share</span></button>
+                            <button class="--icon"><i class="far fa-heart"></i> <span>Like</span></button>
+                        </div>
+                    </div>
+                    <div class="product__label product__label--new"><span>New</span></div>
+                    <div class="product__label product__label--discount product__label--two"><span>-50%</span></div>
+                </section>
+                <section class="product">
+                    <img src="{% static 'layout/FurnitureShop/media/img/p8.jpg' %}" alt="p8">
+                    <div class="product__info">
+                        <h5>Potty</h5>
+                        <p>Minimalist flower pot</p>
+                        <div class="product__price"><span>Rp 500.000</span> <span>Rp 250.000</span></div>
+                    </div>
+                    <div class="product__hover">
+                        <button class="--reverse">Add to cart</button>
+                        <div>
+                            <button class="--icon"><i class="fas fa-share-alt"></i> <span>Share</span></button>
+                            <button class="--icon"><i class="far fa-heart"></i> <span>Like</span></button>
+                        </div>
+                    </div>
+                    <div class="product__label product__label--discount"><span>-50%</span></div>
+                </section>
+                <button class="--reverse">Show More</button>
+            </article>
+            <article class="main__rooms">
+                <div class="container">
+                    <div class="main__rooms-info">
+                        <h2>50+ Beautiful rooms inspiration</h2>
+                        <p>Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
+                        <button>Explore More</button>
+                    </div>
+                    <div class="main__rooms-splide splide">
+                        <div class="splide__track">
+                            <div class="splide__list">
+                                <section class="room splide__slide" style="background-image: url({% static 'layout/FurnitureShop/media/img/r1.jpg)' %};">
+                                    <div class="room__info"><span>01 <img src="{% static 'layout/FurnitureShop/media/img/line.sv' %}g"> Bed Room</span>
+                                        <h4>Inner Peace</h4></div>
+                                    <button><i class="fas fa-chevron-right"></i></button>
+                                </section>
+                                <section class="room splide__slide" style="background-image: url({% static 'layout/FurnitureShop/media/img/r2.jpg)' %};">
+                                    <div class="room__info"><span>01 <img src="{% static 'layout/FurnitureShop/media/img/line.sv' %}g"> Bed Room</span>
+                                        <h4>Inner Peace</h4></div>
+                                    <button><i class="fas fa-chevron-right"></i></button>
+                                </section>
+                                <section class="room splide__slide" style="background-image: url({% static 'layout/FurnitureShop/media/img/r3.jpg)' %};">
+                                    <div class="room__info"><span>01 <img src="{% static 'layout/FurnitureShop/media/img/line.sv' %}g"> Bed Room</span>
+                                        <h4>Inner Peace</h4></div>
+                                    <button><i class="fas fa-chevron-right"></i></button>
+                                </section>
+                                <section class="room splide__slide" style="background-image: url({% static 'layout/FurnitureShop/media/img/r1.jpg)' %};">
+                                    <div class="room__info"><span>01 <img src="{% static 'layout/FurnitureShop/media/img/line.sv' %}g"> Bed Room</span>
+                                        <h4>Inner Peace</h4></div>
+                                    <button><i class="fas fa-chevron-right"></i></button>
+                                </section>
+                                <section class="room splide__slide" style="background-image: url({% static 'layout/FurnitureShop/media/img/r2.jpg)' %};">
+                                    <div class="room__info"><span>01 <img src="{% static 'layout/FurnitureShop/media/img/line.sv' %}g"> Bed Room</span>
+                                        <h4>Inner Peace</h4></div>
+                                    <button><i class="fas fa-chevron-right"></i></button>
+                                </section>
+                                <section class="room splide__slide" style="background-image: url({% static 'layout/FurnitureShop/media/img/r3.jpg)' %};">
+                                    <div class="room__info"><span>01 <img src="{% static 'layout/FurnitureShop/media/img/line.sv' %}g"> Bed Room</span>
+                                        <h4>Inner Peace</h4></div>
+                                    <button><i class="fas fa-chevron-right"></i></button>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="main__tricks container">
+                <h2>Tips & Tricks</h2>
+                <div class="main__tricks-splide splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <section class="trick splide__slide">
+                                <img src="{% static 'layout/FurnitureShop/media/img/tt1.jpg' %}" alt="tt1">
+                                <div class="trick__info">
+                                    <h5>How to create a living room to love</h5>
+                                    <span>20 jan 2020</span>
+                                </div>
+                            </section>
+                            <section class="trick splide__slide">
+                                <img src="{% static 'layout/FurnitureShop/media/img/tt2.jpg' %}" alt="tt2">
+                                <div class="trick__info">
+                                    <h5>Solution for clean look working space</h5>
+                                    <span>10 jan 2020</span>
+                                </div>
+                            </section>
+                            <section class="trick splide__slide">
+                                <img src="{% static 'layout/FurnitureShop/media/img/tt3.jpg' %}" alt="tt3">
+                                <div class="trick__info">
+                                    <h5>Make your cooking activity more fun with good setup</h5>
+                                    <span>20 jan 2020</span>
+                                </div>
+                            </section>
+                            <section class="trick splide__slide">
+                                <img src="{% static 'layout/FurnitureShop/media/img/tt1.jpg' %}" alt="tt1">
+                                <div class="trick__info">
+                                    <h5>How to create a living room to love</h5>
+                                    <span>20 jan 2020</span>
+                                </div>
+                            </section>
+                            <section class="trick splide__slide">
+                                <img src="{% static 'layout/FurnitureShop/media/img/tt1.jpg' %}" alt="tt1">
+                                <div class="trick__info">
+                                    <h5>How to create a living room to love</h5>
+                                    <span>20 jan 2020</span>
+                                </div>
+                            </section>
+                            <section class="trick splide__slide">
+                                <img src="{% static 'layout/FurnitureShop/media/img/tt2.jpg' %}" alt="tt2">
+                                <div class="trick__info">
+                                    <h5>Solution for clean look working space</h5>
+                                    <span>10 jan 2020</span>
+                                </div>
+                            </section>
+                            <section class="trick splide__slide">
+                                <img src="{% static 'layout/FurnitureShop/media/img/tt3.jpg' %}" alt="tt3">
+                                <div class="trick__info">
+                                    <h5>Make your cooking activity more fun with good setup</h5>
+                                    <span>20 jan 2020</span>
+                                </div>
+                            </section>
+                            <section class="trick splide__slide">
+                                <img src="{% static 'layout/FurnitureShop/media/img/tt1.jpg' %}" alt="tt1">
+                                <div class="trick__info">
+                                    <h5>How to create a living room to love</h5>
+                                    <span>20 jan 2020</span>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <div class="main__funiro">
+                <span>Share your setup with</span>
+                <h2>#FuniroFurniture</h2>
+                <div class="funiro">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff4.jpg' %}" alt="ff4">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff7.jpg' %}" alt="ff7">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff1.jpg' %}" alt="ff1">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff3.jpg' %}" alt="ff3">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff6.jpg' %}" alt="ff6">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff5.jpg' %}" alt="ff5">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff2.jpg' %}" alt="ff2">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff8.jpg' %}" alt="ff8">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff9.jpg' %}" alt="ff9">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff3.jpg' %}" alt="ff3">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff8.jpg' %}" alt="ff8">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff6.jpg' %}" alt="ff6">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff1.jpg' %}" alt="ff1">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff2.jpg' %}" alt="ff2">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff4.jpg' %}" alt="ff4">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff5.jpg' %}" alt="ff5">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff8.jpg' %}" alt="ff8">
+                    <img class="funiro__item" src="{% static 'layout/FurnitureShop/media/img/ff7.jpg' %}" alt="ff7">
+                </div>
+            </div>
+            <hr class="main__hr container">
+        </main>
+        <footer class="footer container">
+            <div class="footer__info footer__block container__col-auto">
+                <a class="logo" href="#"><span>Funiro.</span></a>
+                <div class="footer__info-text"><p>Worldwide furniture store since 2020. We sell over 1000+ branded products
+                    on our website</p></div>
+                <div><i class="fas fa-map-marker-alt"></i> <span>Sawojajar Malang, Indonesia</span></div>
+                <div><i class="fas fa-phone-alt"></i> <span>+6289 456 3455</span></div>
+                <span>www.funiro.com</span>
+            </div>
+            <div class="footer__block container__col-auto">
+                <span class="footer__block-title">Menu</span>
+                <a href="#" class="link">Rooms</a>
+                <a href="#" class="link">Products</a>
+                <a href="#" class="link">Inspirations</a>
+                <a href="#" class="link">About Us</a>
+                <a href="#" class="link">Terms & Policy</a>
+            </div>
+            <div class="footer__block container__col-auto">
+                <span class="footer__block-title">Account</span>
+                <a href="#" class="link">My Account</a>
+                <a href="#" class="link">Checkout</a>
+                <a href="#" class="link">My Cart</a>
+                <a href="#" class="link">My catalog</a>
+            </div>
+            <div class="footer__block container__col-auto">
+                <span class="footer__block-title">Stay Connected</span>
+                <a href="#" class="link">Facebook</a>
+                <a href="#" class="link">Instagram</a>
+                <a href="#" class="link">Twitter</a>
+            </div>
+            <div class="footer__form footer__block container__col-auto">
+                <span class="footer__block-title">Stay Updated</span>
+                <form action="#" class="form">
+                    <input class="form__input" type="text" placeholder="Enter your email">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{% static 'lib/js/splide.min.js' %}"></script>
+    <script src="{% static 'lib/js/masonryJS.min.js' %}"></script>
+    <script src="{% static 'layout/FurnitureShop/js/script.min.js' %}"></script>
+</body>
+</html>

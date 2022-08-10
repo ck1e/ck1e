@@ -1,0 +1,27 @@
+{% load static %}
+
+<!-- Custom-cursor -->
+<div class="cursor-dot-outline"></div>
+<div class="cursor-dot"></div>
+
+<!-- Plugin JS -->
+<script src="{% static 'lib/js/jQuery.min.js' %}"></script>
+<script src="{% static 'lib/js/jQuery-migrate.min.js' %}"></script>
+<script src="{% static 'lib/js/jquery.pagePiling.min.js' %}"></script>
+<script src="{% static 'lib/js/aos.min.js' %}"></script>
+<script src="{% static 'lib/js/parralax.min.js' %}"></script>
+<script src="{% static 'lib/js/loader.min.js' %}"></script>
+<script src="{% static 'lib/js/fontawesome.min.js' %}"></script>
+{% if particles %}
+    <script src="{% static 'lib/js/particles.min.js' %}"></script>
+    <script src="{% static 'portfolio/js/init-particles.js' %}"></script>
+{% endif %}
+{% if splide %}
+    <script src="{% static 'lib/js/splide.min.js' %}"></script>
+{% endif %}
+
+<!-- JS -->
+<script src="{% static 'portfolio/js/script.min.js' %}"></script>
+
+</body>
+</html>
